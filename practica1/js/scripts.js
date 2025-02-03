@@ -1,7 +1,29 @@
-/*!
-* Start Bootstrap - Modern Business v5.0.6 (https://startbootstrap.com/template-overviews/modern-business)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-modern-business/blob/master/LICENSE)
-*/
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
+
+document.addEventListener('DOMContentLoaded', function() {
+    const copyButtons = document.querySelectorAll('.copy-button');
+    
+    copyButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const codeBlock = button.parentElement.querySelector('code');
+            const text = codeBlock.textContent;
+            
+            try {
+                await navigator.clipboard.writeText(text);
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text:', err);
+                button.textContent = 'Failed to copy';
+                
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            }
+        });
+    });
+});
