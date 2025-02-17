@@ -4728,9 +4728,11 @@ textarea.form-control-lg {
 
 .card-img,
 .card-img-top {
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
+    width: 100%;
+    height: 300px;  /* Set a fixed height */
+    object-fit: cover;  /* This will make the image cover the area without distortion */
 }
+
 
 .card-img,
 .card-img-bottom {
