@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Práctica 2 | Ibero Puebla</title>
+        <title>Práctica 3 | Ibero Puebla</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -51,7 +51,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Practica 2: “Wifi ESP32 Sensores Digitales, Analógicos e Inteligentes” </h1>
+                        <h1 class="fw-bolder mb-1">Práctica 3: Wifi ESP32 - Thingspeak</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <img class="img rounded-circle" width="50px" height="50px" src="../assets/david.jpeg" alt="..." />
@@ -63,11 +63,12 @@
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 10 de febrero, 2025</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 17 de febrero, 2025</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
                         <a class="badge bg-primary text-decoration-none link-light" >ESP32</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Thingspeak</a>
                         <a class="badge bg-primary text-decoration-none link-light" >IoT</a>
-
+                        <a class="badge bg-primary text-decoration-none link-light" >Sensores</a>
                     </header>
                 </div>
             </section>
@@ -76,112 +77,526 @@
             <section>
                 <div class="container px-5">
 
-                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/screenshot.png" alt="..." /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/image.png" alt="..." /></figure>
                                 
                     <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">En esta práctica se trabaja con diferentes tipos de sensores usando módulos ESP8266 o ESP32, se realizan simulaciones en WOKWI, se crean diagramas de conexión, se programa en Arduino y se efectúan pruebas físicas con componentes como LEDs, resistencias, botones y varios sensores (potenciómetro, DHT22 y PIR).</p>
+                        <p class="fs-6 mb-4">En esta práctica se explora la integración de la plataforma ThingSpeak con módulos ESP32/ESP8266 para la monitorización de sensores en tiempo real. Se implementan cuatro tipos de sensores: un botón (sensor digital), un sensor PIR (sensor digital de movimiento), un potenciómetro (sensor analógico) y un sensor DHT22 (sensor inteligente de temperatura y humedad). Los datos recopilados por estos sensores son transmitidos a través de WiFi a la plataforma ThingSpeak, donde se visualizan en gráficos en tiempo real, demostrando así las capacidades de IoT de estos módulos y la versatilidad de la plataforma de monitorización en la nube.</p>
                         
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <embed src="https://docs.wokwi.com/parts/wokwi-pir-motion-sensor" style="width:1000px; height: 300px;">
-
-                        <p class="fs-6 mb-4">En el mundo de la electrónica y las redes digitales, los sensores juegan un papel fundamental para la recolección de datos y la interacción con el entorno. Los módulos ESP32 y ESP8266, gracias a su capacidad de conectividad WiFi y su versatilidad, se han convertido en herramientas esenciales para el desarrollo de proyectos de Internet de las Cosas (IoT).</p>
-                        <p class="fs-6 mb-4">Estos módulos permiten la integración de diversos tipos de sensores, desde los más básicos como botones digitales, hasta sensores más complejos como los DHT22 para medición de temperatura y humedad, o los sensores PIR para detección de movimiento. A través de la programación en el entorno Arduino IDE y el uso de plataformas de simulación como WOKWI, es posible desarrollar aplicaciones prácticas que demuestren el funcionamiento y la utilidad de estos dispositivos en situaciones reales.</p>
+                        <p class="fs-6 mb-4">El Internet de las Cosas (IoT) ha transformado la manera en que interactuamos con nuestro entorno, permitiendo la recolección, transmisión y análisis de datos en tiempo real. En este contexto, los módulos ESP32 y ESP8266 se han convertido en componentes fundamentales gracias a su capacidad de conectividad WiFi, bajo costo y versatilidad.</p>
+                        
+                        <p class="fs-6 mb-4">ThingSpeak es una plataforma de análisis de IoT que permite agregar, visualizar y analizar flujos de datos en vivo en la nube. Esta plataforma ofrece visualizaciones instantáneas de los datos enviados por los dispositivos y permite la creación de aplicaciones IoT sin necesidad de configurar servidores.</p>
+                        
+                        <p class="fs-6 mb-4">En esta práctica, integraremos cuatro tipos diferentes de sensores con el ESP32 o ESP8266 y enviaremos sus lecturas a ThingSpeak para su visualización. Cada sensor representa un caso de uso distinto: el botón como entrada digital simple, el sensor PIR para detección de movimiento, el potenciómetro como entrada analógica variable, y el sensor DHT22 para mediciones ambientales precisas. Esta combinación nos permitirá comprender el flujo completo desde la adquisición de datos físicos hasta su visualización en una plataforma IoT.</p>
                         
                         <p id="materiales">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
                         <ul>
-                            <li>Node MCU ESP8266 o ESP32</li>
-                            <li>LED, resistencia de 220 Ohms</li>
-                            <li>Botón y resistencia de 1Khom</li>
-                            <li>Sensores: Potenciómetro, DHT22, PIR</li>
-                            <li>Protoboard y cables</li>
+                            <li>Módulo NodeMCU ESP8266 o ESP32</li>
+                            <li>Botón pulsador (para sensor digital)</li>
+                            <li>Resistencia de 10K ohms (pull-down para el botón)</li>
+                            <li>Sensor PIR (HC-SR501)</li>
+                            <li>Potenciómetro de 10K ohms</li>
+                            <li>Sensor DHT22 (temperatura y humedad)</li>
+                            <li>LED y resistencia de 220 ohms (indicador visual)</li>
+                            <li>Protoboard y cables de conexión</li>
+                            <li>Cuenta en la plataforma ThingSpeak</li>
+                            <li>Entorno Arduino IDE configurado con bibliotecas ESP32/ESP8266 y DHT</li>
                         </ul>
                      
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
-
-                        <h2>Sensor Digital (botón)</h2>
-
-                        <p>Simulación en WOKWI:</p>
                         
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">1. Configuración de ThingSpeak</h3>
+                        <ol>
+                            <li>Crear una cuenta en ThingSpeak (thingspeak.com)</li>
+                            <li>Generar un nuevo canal con cuatro campos:
+                                <ul>
+                                    <li>Field 1: Sensor Digital (Botón)</li>
+                                    <li>Field 2: Sensor Digital PIR</li>
+                                    <li>Field 3: Sensor Analógico (Potenciómetro)</li>
+                                    <li>Field 4: Sensor Inteligente (Temperatura DHT22)</li>
+                                </ul>
+                            </li>
+                            <li>Obtener la API Key para escritura en el canal</li>
+                        </ol>
+                        
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">2. Configuración del IDE Arduino</h3>
+                        <ol>
+                            <li>Instalar las bibliotecas necesarias:
+                                <ul>
+                                    <li>ESP8266WiFi/WiFi (dependiendo del módulo usado)</li>
+                                    <li>DHT</li>
+                                    <li>ThingSpeak</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">3. Sensor Digital (Botón)</h3>
+                        <p>Simulación en WOKWI:</p>
                         <embed src="https://wokwi.com/projects/422552504580761601" style="width:1000px; height: 500px;">
                         
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_1.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light py-2">
+                                <span class="text-primary fw-bold"><i class="bi bi-code-slash me-2"></i>Código Sensor Digital (Botón)</span>
+                            </div>
+                            <div class="card-body bg-light p-4">
+                                <pre class="bg-dark text-light p-3 rounded" style="overflow-x: auto;"><code style="font-family: 'Courier New', monospace; font-size: 0.9rem;">#include &lt;WiFi.h&gt;
+#include &lt;HTTPClient.h&gt;
 
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorDigital.mp4" type="video/mp4">
-                            </video></p></figure>
+int buttonPin = 26;
+int ledPin = 27;
+int buttonState = 0;
 
+String url = "https://api.thingspeak.com/update?";
+String api_key = "FUV135ZIDNU0UE1K";
+String sensor = "field1";
 
-                        <h2>Sesnor Analógico (potenciometro)</h2>
+void setup() {
+  pinMode(buttonPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(115200);
+  
+  WiFi.begin("ALFREDOMACHINE", "35|f916Y");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WiFi connected");
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin);
+  Serial.print("Estado del botón: ");
+  Serial.println(buttonState);
+  
+  // Encender LED si el botón está presionado
+  if (buttonState == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+  
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    String message = url + "api_key=" + api_key + "&" + sensor + "=" + String(buttonState);
+    
+    http.begin(message);
+    int httpCode = http.GET();
+    
+    Serial.println(message);
+    Serial.print("HTTP Response Code: ");
+    Serial.println(httpCode);
+    
+    http.end();
+  }
+  
+  delay(5000); // Esperar antes del siguiente envío
+}</code></pre>
+                            </div>
+                        </div>
                         
-                        <p>Simulación en WOKWI</p>
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">4. Sensor Digital PIR</h3>
+                        <p>Simulación en WOKWI:</p>
+                        <embed src="https://wokwi.com/projects/422552936468354049" style="width:1000px; height: 500px;">
+                        
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light py-2">
+                                <span class="text-primary fw-bold"><i class="bi bi-code-slash me-2"></i>Código Sensor Digital PIR</span>
+                            </div>
+                            <div class="card-body bg-light p-4">
+                                <pre class="bg-dark text-light p-3 rounded" style="overflow-x: auto;"><code style="font-family: 'Courier New', monospace; font-size: 0.9rem;">#include &lt;WiFi.h&gt;
+#include &lt;HTTPClient.h&gt;
+
+int pirPin = 34;
+int ledPin = 5;
+int pirState = 0;
+
+String url = "https://api.thingspeak.com/update?";
+String api_key = "FUV135ZIDNU0UE1K";
+String sensor = "field2";
+
+void setup() {
+  pinMode(pirPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(115200);
+  
+  WiFi.begin("ALFREDOMACHINE", "35|f916Y");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WiFi connected");
+}
+
+void loop() {
+  pirState = digitalRead(pirPin);
+  Serial.print("Estado del sensor PIR: ");
+  Serial.println(pirState);
+  
+  // Encender LED si se detecta movimiento
+  if (pirState == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+  
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    String message = url + "api_key=" + api_key + "&" + sensor + "=" + String(pirState);
+    
+    http.begin(message);
+    int httpCode = http.GET();
+    
+    Serial.println(message);
+    Serial.print("HTTP Response Code: ");
+    Serial.println(httpCode);
+    
+    http.end();
+  }
+  
+  delay(5000); // Esperar antes del siguiente envío
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">5. Sensor Analógico (Potenciómetro)</h3>
+                        <p>Simulación en WOKWI:</p>
                         <embed src="https://wokwi.com/projects/422552797323325441" style="width:1000px; height: 500px;">
                         
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_2.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorAnalógico.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light py-2">
+                                <span class="text-primary fw-bold"><i class="bi bi-code-slash me-2"></i>Código Sensor Analógico (Potenciómetro)</span>
+                            </div>
+                            <div class="card-body bg-light p-4">
+                                <pre class="bg-dark text-light p-3 rounded" style="overflow-x: auto;"><code style="font-family: 'Courier New', monospace; font-size: 0.9rem;">#include &lt;WiFi.h&gt;
+#include &lt;HTTPClient.h&gt;
 
-                        <h2>Sensor Inteligente (DHT22)</h2>
-                        <p>Simulación en WOKWI</p>
+int potPin = 35;
+int ledPin = 18;
+int potValue = 0;
+
+String url = "https://api.thingspeak.com/update?";
+String api_key = "FUV135ZIDNU0UE1K";
+String sensor = "field3";
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(115200);
+  
+  WiFi.begin("ALFREDOMACHINE", "35|f916Y");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WiFi connected");
+}
+
+void loop() {
+  potValue = analogRead(potPin);
+  // Normalizar el valor para ESP32 (0-4095 a 0-1024)
+  potValue = map(potValue, 0, 4095, 0, 1024);
+  
+  Serial.print("Valor del potenciómetro: ");
+  Serial.println(potValue);
+  
+  // Modular el brillo del LED según el valor del potenciómetro
+  int brightness = map(potValue, 0, 1024, 0, 255);
+  analogWrite(ledPin, brightness);
+  
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    String message = url + "api_key=" + api_key + "&" + sensor + "=" + String(potValue);
+    
+    http.begin(message);
+    int httpCode = http.GET();
+    
+    Serial.println(message);
+    Serial.print("HTTP Response Code: ");
+    Serial.println(httpCode);
+    
+    http.end();
+  }
+  
+  delay(5000); // Esperar antes del siguiente envío
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">6. Sensor Inteligente (DHT22)</h3>
+                        <p>Simulación en WOKWI:</p>
                         <embed src="https://wokwi.com/projects/422552865883443201" style="width:1000px; height: 500px;">
                         
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_3.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorInteligente.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light py-2">
+                                <span class="text-primary fw-bold"><i class="bi bi-code-slash me-2"></i>Código Sensor Inteligente (DHT22)</span>
+                            </div>
+                            <div class="card-body bg-light p-4">
+                                <pre class="bg-dark text-light p-3 rounded" style="overflow-x: auto;"><code style="font-family: 'Courier New', monospace; font-size: 0.9rem;">#include &lt;WiFi.h&gt;
+#include &lt;HTTPClient.h&gt;
+#include &lt;DHT.h&gt;
+#define DHTPIN 32
+#define DHTTYPE DHT22
+DHT dht(DHTPIN, DHTTYPE);
+int led = 33;
+int led2 = 25;
+int temp_value = 0;
+int hum_value = 0;
+String url = "https://api.thingspeak.com/update?";
+String api_key = "FUV135ZIDNU0UE1K";
+String sensor = "field4";
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(led2, OUTPUT);
+  Serial.begin(115200);
+  dht.begin();
+  
+  WiFi.begin("ALFREDOMACHINE", "35|f916Y");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WiFi connected");
+}
+void loop() {
+  delay(1000);
+  
+  temp_value = dht.readTemperature();
+  hum_value = dht.readHumidity();
+  Serial.print("Temperatura: ");
+  Serial.println(temp_value);
+  Serial.print("Humedad: ");
+  Serial.println(hum_value);
+  if (hum_value >= 50) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+  if (temp_value >= 23) {
+    digitalWrite(led2, HIGH);
+  } else {
+    digitalWrite(led2, LOW);
+  }
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    String message = url + "api_key=" + api_key + "&" + sensor + "=" + String(temp_value);
+    
+    http.begin(message);
+    int httpCode = http.GET();
+    
+    Serial.println(message);
+    Serial.print("HTTP Response Code: ");
+    Serial.println(httpCode);
+    
+    http.end();
+  }
+  delay(3000); // Espera antes del siguiente envío
+}</code></pre>
+                            </div>
+                        </div>
 
-                        <h2>Sensor Digital PIR</h2>
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552936468354049" style="width:1000px; height: 500px;">
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_4.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_PIR.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">7. Código Integrado para Todos los Sensores</h3>
                         
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light py-2">
+                                <span class="text-primary fw-bold"><i class="bi bi-code-slash me-2"></i>Código Integrado para Todos los Sensores</span>
+                            </div>
+                            <div class="card-body bg-light p-4">
+                                <pre class="bg-dark text-light p-3 rounded" style="overflow-x: auto;"><code style="font-family: 'Courier New', monospace; font-size: 0.9rem;">#include &lt;WiFi.h&gt;
+#include &lt;HTTPClient.h&gt;
+#include &lt;DHT.h&gt;
 
+// Definición de pines
+#define DHTPIN 32
+#define DHTTYPE DHT22
 
+const int buttonPin = 26;
+const int pirPin = 34;
+const int potPin = 35;
+const int ledButton = 27;
+const int ledPir = 5;
+const int ledPot = 18;
+const int ledTemp = 33;
+const int ledHum = 25;
+
+// Variables para lecturas de sensores
+int buttonState = 0;
+int pirState = 0;
+int potValue = 0;
+int temp_value = 0;
+int hum_value = 0;
+
+// Configuración de ThingSpeak
+String url = "https://api.thingspeak.com/update?";
+String api_key = "FUV135ZIDNU0UE1K";
+
+// Inicialización de objetos
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  // Configuración de pines
+  pinMode(buttonPin, INPUT);
+  pinMode(pirPin, INPUT);
+  pinMode(ledButton, OUTPUT);
+  pinMode(ledPir, OUTPUT);
+  pinMode(ledPot, OUTPUT);
+  pinMode(ledTemp, OUTPUT);
+  pinMode(ledHum, OUTPUT);
+  
+  // Inicialización del DHT y Serial
+  Serial.begin(115200);
+  dht.begin();
+  
+  // Conexión WiFi
+  WiFi.begin("ALFREDOMACHINE", "35|f916Y");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("WiFi connected");
+}
+
+void loop() {
+  // Leer todos los sensores
+  buttonState = digitalRead(buttonPin);
+  pirState = digitalRead(pirPin);
+  potValue = analogRead(potPin);
+  potValue = map(potValue, 0, 4095, 0, 1024); // Normalizar para ESP32
+  temp_value = dht.readTemperature();
+  hum_value = dht.readHumidity();
+  
+  // Actualizar LEDs según las lecturas
+  digitalWrite(ledButton, buttonState);
+  digitalWrite(ledPir, pirState);
+  analogWrite(ledPot, map(potValue, 0, 1024, 0, 255));
+  
+  if (temp_value >= 23) {
+    digitalWrite(ledTemp, HIGH);
+  } else {
+    digitalWrite(ledTemp, LOW);
+  }
+  
+  if (hum_value >= 50) {
+    digitalWrite(ledHum, HIGH);
+  } else {
+    digitalWrite(ledHum, LOW);
+  }
+  
+  // Mostrar lecturas en el monitor serial
+  Serial.println("------ Lecturas de Sensores ------");
+  Serial.print("Botón: ");
+  Serial.println(buttonState);
+  Serial.print("PIR: ");
+  Serial.println(pirState);
+  Serial.print("Potenciómetro: ");
+  Serial.println(potValue);
+  Serial.print("Temperatura: ");
+  Serial.println(temp_value);
+  Serial.print("Humedad: ");
+  Serial.println(hum_value);
+  Serial.println("--------------------------------");
+  
+  // Enviar datos a ThingSpeak si WiFi está conectado
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    
+    // Construir URL con todos los campos
+    String message = url + "api_key=" + api_key + 
+                    "&field1=" + String(buttonState) + 
+                    "&field2=" + String(pirState) + 
+                    "&field3=" + String(potValue) + 
+                    "&field4=" + String(temp_value) + 
+                    "&field5=" + String(hum_value);
+    
+    http.begin(message);
+    int httpCode = http.GET();
+    
+    Serial.println(message);
+    Serial.print("HTTP Response Code: ");
+    Serial.println(httpCode);
+    
+    http.end();
+  }
+  
+  delay(15000); // Esperar 15 segundos antes del siguiente envío
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
+                        
+                        <p class="fs-6 mb-4">Los resultados se pueden visualizar en los gráficos generados por ThingSpeak:</p>
+                        
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">Sensor 1: Digital (Botón)</h3>
+                        <figure class="mb-4" align="center"><video width="80%" controls>
+                            <source src="video/boton.mp4" type="video/mp4">
+                        </video></figure>
+                        <figure class="mb-4">
+                            <img class="img-fluid rounded" src="img/sensor1.jpg" alt="Gráfico del Sensor Digital (Botón)" />
+                            <figcaption class="text-center text-muted">Gráfico del Sensor Digital (Botón)</figcaption>
+                        </figure>
+                        <p class="fs-6 mb-4">Como se observa en la imagen, el sensor digital muestra valores de 0 cuando el botón no está presionado y 1 cuando está presionado. Se puede ver una activación del botón entre las 12:08 y 12:09, manteniendo el valor en 1 durante ese período.</p>
+                        
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">Sensor 2: Digital PIR</h3>
+                        <figure class="mb-4" align="center"><video width="80%" controls>
+                            <source src="video/pir.mp4" type="video/mp4">
+                        </video></figure>
+                        <figure class="mb-4">
+                            <img class="img-fluid rounded" src="img/sensor2.jpg" alt="Gráfico del Sensor PIR" />
+                            <figcaption class="text-center text-muted">Gráfico del Sensor PIR</figcaption>
+                        </figure>
+                        <p class="fs-6 mb-4">El sensor PIR muestra una detección de movimiento constante (valor 1) hasta las 20:41:45, momento en el que deja de detectar movimiento (valor 0), para luego volver a detectar a las 20:42:15.</p>
+                        
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">Sensor 3: Analógico (Potenciómetro)</h3>
+                        <figure class="mb-4" align="center"><video width="80%" controls>
+                            <source src="video/potenciometro.mp4" type="video/mp4">
+                        </video></figure>
+                        <figure class="mb-4">
+                            <img class="img-fluid rounded" src="img/sensor3.jpg" alt="Gráfico del Sensor Analógico (Potenciómetro)" />
+                            <figcaption class="text-center text-muted">Gráfico del Sensor Analógico (Potenciómetro)</figcaption>
+                        </figure>
+                        <p class="fs-6 mb-4">La imagen muestra las lecturas del potenciómetro, con valores que van desde 0 hasta aproximadamente 4000 (escala del ADC). Se observa un incremento repentino a las 12:12:15, manteniendo el valor máximo durante unos 45 segundos antes de volver a 0.</p>
+                        
+                        <h3 class="fw-bolder mb-3 mt-4 fs-6">Sensor 4: Temperatura (DHT22)</h3>
+                        <figure class="mb-4">
+                            <img class="img-fluid rounded" src="img/sensor4.jpg" alt="Gráfico del Sensor de Temperatura (DHT22)" />
+                            <figcaption class="text-center text-muted">Gráfico del Sensor de Temperatura (DHT22)</figcaption>
+                        </figure>
+                        <p class="fs-6 mb-4">Se muestran las lecturas de temperatura, comenzando en 26°C y aumentando gradualmente hasta alcanzar los 28°C al final del período de registro, probablemente debido a factores ambientales o al calentamiento del propio sensor.</p>
+                        
+                        <p class="fs-6 mb-4">Estos gráficos demuestran la correcta implementación de la comunicación entre los sensores, el módulo ESP32/ESP8266 y la plataforma ThingSpeak, cumpliendo así con los objetivos de la práctica.</p>
+                        
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">Al finalizar esta práctica, se logra comprender la importancia y versatilidad de los diferentes tipos de sensores en aplicaciones con ESP32 y ESP8266. La experiencia práctica obtenida mediante las simulaciones en WOKWI y las implementaciones físicas proporciona una base sólida para el desarrollo de futuros proyectos IoT.</p>
-                        <p class="fs-6 mb-4">El trabajo con sensores digitales, analógicos e inteligentes demuestra cómo cada tipo tiene sus propias características y aplicaciones específicas, desde la simple detección de estados con botones hasta la medición precisa de variables ambientales con el DHT22 o la detección de movimiento con el PIR. </p>
-                        <p class="fs-6 mb-4">Esta combinación de hardware y programación ilustra claramente cómo los sistemas embebidos pueden interactuar con el mundo físico, sentando las bases para el desarrollo de aplicaciones más complejas en el campo de las redes digitales de datos. </p>
+                        <p class="fs-6 mb-4">Al finalizar esta práctica, se logró implementar exitosamente la conexión entre diferentes tipos de sensores y la plataforma ThingSpeak utilizando módulos ESP32/ESP8266. La integración de sensores digitales (botón y PIR), analógicos (potenciómetro) e inteligentes (DHT22) demostró la versatilidad de estos módulos para aplicaciones IoT.</p>
+                        <p class="fs-6 mb-4">La visualización en tiempo real de los datos en la plataforma ThingSpeak permitió observar claramente los cambios en las lecturas de los sensores, facilitando el análisis y la interpretación de la información recopilada. Esta capacidad de monitorización remota es fundamental en aplicaciones de IoT, donde se requiere acceso a la información desde cualquier lugar.</p>
+                        <p class="fs-6 mb-4">El uso de la plataforma WOKWI para las simulaciones previas a la implementación física resultó ser una herramienta valiosa para depurar el código y verificar el funcionamiento correcto de los circuitos. La posterior implementación física confirmó los resultados observados en las simulaciones.</p>
+                        <p class="fs-6 mb-4">Esta práctica proporciona una base sólida para el desarrollo de proyectos más complejos que involucren la recolección y análisis de datos de sensores en tiempo real, aplicables en áreas como domótica, monitorización ambiental, seguridad, entre otras.</p>
+                        
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
-                        <p class="fs-6 mb-4">Santos, S. (2024, August 2). ESP32 with PIR Motion Sensor using Interrupts and Timers | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/</p>
-                        <p class="fs-6 mb-4">wokwi-pir-motion-sensor Reference | Wokwi Docs. (n.d.). https://docs.wokwi.com/parts/wokwi-pir-motion-sensor</p>
-                        <p class="fs-6 mb-4">Santos, R. (2024, August 5). Getting Started with the ESP32 Development Board | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/getting-started-with-esp32/</p>
+                        <p class="fs-6 mb-4">ThingSpeak. (2025). ThingSpeak for IoT Projects. <a href="https://thingspeak.com" target="_blank">https://thingspeak.com</a></p>
+                        <p class="fs-6 mb-4">Mathworks. (2025). Getting Started with ThingSpeak. <a href="https://www.mathworks.com/help/thingspeak/getting-started-with-thingspeak.html" target="_blank">https://www.mathworks.com/help/thingspeak/getting-started-with-thingspeak.html</a></p>
+                        <p class="fs-6 mb-4">Santos, S. (2025). ESP32 with PIR Motion Sensor using Interrupts and Timers. Random Nerd Tutorials. <a href="https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/" target="_blank">https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/</a></p>
+                        <p class="fs-6 mb-4">Santos, R. (2025). Getting Started with the ESP32 Development Board. Random Nerd Tutorials. <a href="https://randomnerdtutorials.com/getting-started-with-esp32/" target="_blank">https://randomnerdtutorials.com/getting-started-with-esp32/</a></p>
+                        <p class="fs-6 mb-4">WOKWI. (2025). IoT simulation platform. <a href="https://wokwi.com" target="_blank">https://wokwi.com</a></p>
                         
                         <p id="descargables">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
-                        <p class="fs-6 mb-4">Descargar instrucciones: <a href="files/practica2.docx">practica2.docx</a> </p>
+                        <p class="fs-6 mb-4">Descargar instrucciones: <a href="files/practica3.docx">practica3.docx</a></p>
+                        <p class="fs-6 mb-4">Códigos de ejemplo: <a href="files/practica3_codigos.zip">practica3_codigos.zip</a></p>
 
                 </div>
             </section>
-
-            
         </main>
 
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Ingenierias-iberopuebla.mx 2023</div></div>
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Ingenierias-iberopuebla.mx 2025</div></div>
                     <div class="col-auto">
                         <a class="link-light small" href="#!">Privacy</a>
                         <span class="text-white mx-1">&middot;</span>
