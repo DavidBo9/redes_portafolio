@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Práctica 2 | Ibero Puebla</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container px-5">
+                    <a class="navbar-brand">Menu</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="../">Home</a></li>                    
+                            <li class="nav-item"><a class="nav-link" href="../index.html#resumen">Acerca de mi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../index.html#practicas">Prácticas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Seccion TITULO de Portafolio-->
+            <header class="bg-primary py-2 mt-6">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-6 fw-bolder text-white mb-2">Portafolio de Actividades</h1>
+                                <h1 class="display-8 fw-bolder text-white mb-2">Redes Digitales de Datos</h1>
+                                <p id="resumen" class="display-8 fw-normal text-white-50 mb-4">Departamento de Ciencias e Ingenierías | Universidad Iberoamericana Puebla, México.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Seccion TITULO de la Práctica-->
+            <section class="py-3" id="scroll-target">
+                <div class="container px-5 my-2">
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Practica 2: “Wifi ESP32 Sensores Digitales, Analógicos e Inteligentes” </h1>
+
+                        <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
+                            <img class="img rounded-circle" width="50px" height="50px" src="../assets/david.jpeg" alt="..." />
+                            <img class="img-fluid rounded-circle" width="50px" src="../assets/alfredojpg.jpg" alt="..." />
+                            <div class="ms-2">
+                                <div class="fw-bold">David Bojalil Abiti</div>
+                                <div class="fw-bold">Alfredo Barranco Ahued</div>
+                                <div class="text-muted">Ingenieria en Sistemas Computacionales</div>
+                            </div>
+                        <!--Aqui termina etiqueta de alumno-->
+
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 10 de febrero, 2025</div>
+                        <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
+                        <a class="badge bg-primary text-decoration-none link-light" >ESP32</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >IoT</a>
+
+                    </header>
+                </div>
+            </section>
+
+            <!-- Seccion de CONTENIDO de la Práctica-->
+            <section>
+                <div class="container px-5">
+
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/screenshot.png" alt="..." /></figure>
+                                
+                    <p id="resumen">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
+                        <p class="fs-6 mb-4">En esta práctica se trabaja con diferentes tipos de sensores usando módulos ESP8266 o ESP32, se realizan simulaciones en WOKWI, se crean diagramas de conexión, se programa en Arduino y se efectúan pruebas físicas con componentes como LEDs, resistencias, botones y varios sensores (potenciómetro, DHT22 y PIR).</p>
+                        
+                        <p id="intro">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
+                        <embed src="https://docs.wokwi.com/parts/wokwi-pir-motion-sensor" style="width:1000px; height: 300px;">
+
+                        <p class="fs-6 mb-4">En el mundo de la electrónica y las redes digitales, los sensores juegan un papel fundamental para la recolección de datos y la interacción con el entorno. Los módulos ESP32 y ESP8266, gracias a su capacidad de conectividad WiFi y su versatilidad, se han convertido en herramientas esenciales para el desarrollo de proyectos de Internet de las Cosas (IoT).</p>
+                        <p class="fs-6 mb-4">Estos módulos permiten la integración de diversos tipos de sensores, desde los más básicos como botones digitales, hasta sensores más complejos como los DHT22 para medición de temperatura y humedad, o los sensores PIR para detección de movimiento. A través de la programación en el entorno Arduino IDE y el uso de plataformas de simulación como WOKWI, es posible desarrollar aplicaciones prácticas que demuestren el funcionamiento y la utilidad de estos dispositivos en situaciones reales.</p>
+                        
+                        <p id="materiales">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
+                        <ul>
+                            <li>Node MCU ESP8266 o ESP32</li>
+                            <li>LED, resistencia de 220 Ohms</li>
+                            <li>Botón y resistencia de 1Khom</li>
+                            <li>Sensores: Potenciómetro, DHT22, PIR</li>
+                            <li>Protoboard y cables</li>
+                        </ul>
+                     
+                        <p id="desarrollo">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
+
+                        <h2>Sensor Digital (botón)</h2>
+
+                        <p>Simulación en WOKWI:</p>
+                        
+                        <embed src="https://wokwi.com/projects/422552504580761601" style="width:1000px; height: 500px;">
+                        
+                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
+                            <figure class="mb-4" align="center"><video width="80%"  controls>
+                                <source src="video/practica2_1.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                            <figure class="mb-4" align="center"><video width="80%"  controls>
+                                <source src="video/P2_SensorDigital.mp4" type="video/mp4">
+                            </video></p></figure>
+
+
+                        <h2>Sesnor Analógico (potenciometro)</h2>
+                        
+                        <p>Simulación en WOKWI</p>
+                        <embed src="https://wokwi.com/projects/422552797323325441" style="width:1000px; height: 500px;">
+                        
+                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
+                            <figure class="mb-4" align="center"><video width="80%"  controls>
+                                <source src="video/practica2_2.mp4" type="video/mp4">
+                            </video></p></figure>
+                            <figure class="mb-4" align="center"><video width="80%"  controls>
+                                <source src="video/P2_SensorAnalógico.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                        <h2>Sensor Inteligente (DHT22)</h2>
+                        <p>Simulación en WOKWI</p>
+                        <embed src="https://wokwi.com/projects/422552865883443201" style="width:1000px; height: 500px;">
+                        
+                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
+                            <figure class="mb-4" align="center"><video width="80%"  controls>
+                                <source src="video/practica2_3.mp4" type="video/mp4">
+                            </video></p></figure>
+                            <figure class="mb-4" align="center"><video width="80%"  controls>
+                                <source src="video/P2_SensorInteligente.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                        <h2>Sensor Digital PIR</h2>
+                        <p>Simulación en WOKWI</p>
+                        <embed src="https://wokwi.com/projects/422552936468354049" style="width:1000px; height: 500px;">
+                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
+                            <figure class="mb-4" align="center"><video width="80%"  controls>
+                                <source src="video/practica2_4.mp4" type="video/mp4">
+                            </video></p></figure>
+                            <figure class="mb-4" align="center"><video width="80%"  controls>
+                                <source src="video/P2_PIR.mp4" type="video/mp4">
+                            </video></p></figure>
+                        
+
+
+                        <p id="conclusiones">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
+                        <p class="fs-6 mb-4">Al finalizar esta práctica, se logra comprender la importancia y versatilidad de los diferentes tipos de sensores en aplicaciones con ESP32 y ESP8266. La experiencia práctica obtenida mediante las simulaciones en WOKWI y las implementaciones físicas proporciona una base sólida para el desarrollo de futuros proyectos IoT.</p>
+                        <p class="fs-6 mb-4">El trabajo con sensores digitales, analógicos e inteligentes demuestra cómo cada tipo tiene sus propias características y aplicaciones específicas, desde la simple detección de estados con botones hasta la medición precisa de variables ambientales con el DHT22 o la detección de movimiento con el PIR. </p>
+                        <p class="fs-6 mb-4">Esta combinación de hardware y programación ilustra claramente cómo los sistemas embebidos pueden interactuar con el mundo físico, sentando las bases para el desarrollo de aplicaciones más complejas en el campo de las redes digitales de datos. </p>
+                        <p id="referencias">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
+                        <p class="fs-6 mb-4">Santos, S. (2024, August 2). ESP32 with PIR Motion Sensor using Interrupts and Timers | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/</p>
+                        <p class="fs-6 mb-4">wokwi-pir-motion-sensor Reference | Wokwi Docs. (n.d.). https://docs.wokwi.com/parts/wokwi-pir-motion-sensor</p>
+                        <p class="fs-6 mb-4">Santos, R. (2024, August 5). Getting Started with the ESP32 Development Board | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/getting-started-with-esp32/</p>
+                        
+                        <p id="descargables">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
+                        <p class="fs-6 mb-4">Descargar instrucciones: <a href="files/practica2.docx">practica2.docx</a> </p>
+
+                </div>
+            </section>
+
+            
+        </main>
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Ingenierias-iberopuebla.mx 2023</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
