@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
+<html lang="en">    <head>
+                              <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Práctica 4: "Sistema de Adquisición y Visualización de Datos Web" </h1><meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Práctica 2 | Ibero Puebla</title>
+        <title>Práctica 4 | Ibero Puebla</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -51,7 +51,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Practica 2: “Wifi ESP32 Sensores Digitales, Analógicos e Inteligentes” </h1>
+                        <h1 class="fw-bolder mb-1">Practica 4: “Backend y Frontend PHP” </h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <img class="img rounded-circle" width="50px" height="50px" src="../assets/david.jpeg" alt="..." />
@@ -63,7 +63,7 @@
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 10 de febrero, 2025</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 28 de febrero, 2025</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
                         <a class="badge bg-primary text-decoration-none link-light" >ESP32</a>
                         <a class="badge bg-primary text-decoration-none link-light" >IoT</a>
@@ -75,97 +75,460 @@
             <!-- Seccion de CONTENIDO de la Práctica-->
             <section>
                 <div class="container px-5">
-
-                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/screenshot.png" alt="..." /></figure>
-                                
-                    <p id="resumen">
+                        <img src="img/practica4.png" width="300px" height="200px" alt="..." />
+                        <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">En esta práctica se trabaja con diferentes tipos de sensores usando módulos ESP8266 o ESP32, se realizan simulaciones en WOKWI, se crean diagramas de conexión, se programa en Arduino y se efectúan pruebas físicas con componentes como LEDs, resistencias, botones y varios sensores (potenciómetro, DHT22 y PIR).</p>
-                        
-                        <p id="intro">
+                        <p class="fs-6 mb-4">En esta práctica, se implementará un sistema de adquisición y visualización de datos mediante distintos sensores conectados a una plataforma en línea. Se utilizarán un sensor digital (botón), un sensor analógico (potenciómetro), un sensor inteligente (DHT22) para medición de temperatura y humedad, y un sensor PIR para detección de movimiento. Los datos obtenidos serán enviados a Replit (solamente para pruebas, al final se desplegará en Render), donde se visualizarán en un dashboard desarrollado con HTML, CSS y PHP. Este sistema permitirá monitorear en tiempo real las mediciones de los sensores, proporcionando una interfaz gráfica accesible a través de la web.</p>                        <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <embed src="https://docs.wokwi.com/parts/wokwi-pir-motion-sensor" style="width:1000px; height: 300px;">
 
-                        <p class="fs-6 mb-4">En el mundo de la electrónica y las redes digitales, los sensores juegan un papel fundamental para la recolección de datos y la interacción con el entorno. Los módulos ESP32 y ESP8266, gracias a su capacidad de conectividad WiFi y su versatilidad, se han convertido en herramientas esenciales para el desarrollo de proyectos de Internet de las Cosas (IoT).</p>
-                        <p class="fs-6 mb-4">Estos módulos permiten la integración de diversos tipos de sensores, desde los más básicos como botones digitales, hasta sensores más complejos como los DHT22 para medición de temperatura y humedad, o los sensores PIR para detección de movimiento. A través de la programación en el entorno Arduino IDE y el uso de plataformas de simulación como WOKWI, es posible desarrollar aplicaciones prácticas que demuestren el funcionamiento y la utilidad de estos dispositivos en situaciones reales.</p>
-                        
-                        <p id="materiales">
+                        <p class="fs-6 mb-4">En el ámbito del desarrollo web, los conceptos de frontend y backend hacen referencia a las dos áreas fundamentales que conforman una página o aplicación web. El frontend, también conocido como desarrollo del lado del cliente, abarca todo aquello con lo que los usuarios interactúan directamente desde sus navegadores. Esto incluye la apariencia visual, la disposición de los elementos y el comportamiento dinámico de la interfaz. Para construir esta parte se utilizan tecnologías como HTML (Lenguaje de Marcado de Hipertexto), que define la estructura y el contenido; CSS (Hojas de Estilo en Cascada), que se encarga del diseño y el estilo visual; y JavaScript, que permite agregar funciones interactivas y comportamientos dinámicos.</p>
+                        <p class="fs-6 mb-4">Por su parte, el backend, o desarrollo del lado del servidor, se encarga de todo lo que sucede "detrás de escena". Esta parte se ocupa de la lógica del sistema, el acceso a las bases de datos y la gestión de las peticiones que provienen del frontend. Entre sus funciones están el procesamiento de datos, ejecución de operaciones y envío de respuestas adecuadas al cliente. Uno de los lenguajes más comunes en esta área es PHP (Preprocesador de Hipertexto), el cual permite generar contenido dinámico y trabajar con bases de datos para manipular información de forma eficaz.</p>
+                        <p class="fs-6 mb-4">Durante esta práctica se utilizó Replit, una plataforma en línea que actúa como entorno de desarrollo integrado (IDE) en la nube. Replit brinda la posibilidad de escribir, ejecutar y colaborar en proyectos de programación directamente desde el navegador, eliminando la necesidad de instalaciones locales. Además, facilita la colaboración en tiempo real entre varios usuarios y es compatible con numerosos lenguajes de programación, lo que la convierte en una herramienta ideal para proyectos colaborativos.</p>
+                        <p class="fs-6 mb-4">El proyecto se llevó a cabo en coordinación con otro equipo. Nuestro grupo fue responsable del botón digital y del sensor PIR (sensor de movimiento), mientras que el otro grupo trabajó con el sensor DHT22 (para temperatura y humedad) y un potenciómetro como sensor analógico. Los datos recogidos por todos los sensores se integraron en un mismo dashboard desarrollado en Replit utilizando HTML, CSS y PHP, lo que permitió mostrar la información combinada en una sola interfaz gráfica actualizada en tiempo real.</p>
+                        <p class="fs-6 mb-4">Finalmente, la aplicación fue publicada utilizando Render, una plataforma de infraestructura como servicio (IaaS) que permite desplegar tanto aplicaciones web como servicios backend de forma sencilla y eficiente. Render proporciona servicios de alojamiento, gestión de bases de datos y almacenamiento, permitiendo a los desarrolladores enfocarse en la construcción de su aplicación sin preocuparse por la configuración del servidor.</p>
+                          <p id="materiales">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
                         <ul>
-                            <li>Node MCU ESP8266 o ESP32</li>
-                            <li>LED, resistencia de 220 Ohms</li>
-                            <li>Botón y resistencia de 1Khom</li>
-                            <li>Sensores: Potenciómetro, DHT22, PIR</li>
-                            <li>Protoboard y cables</li>
+                            <li>ESP32</li>
+                            <li>2 Protoboards</li>
+                            <li>1 LED</li>
+                            <li>1 Botón</li>
+                            <li>1 Potenciómetro 5k</li>
+                            <li>1 Sensor DHT22</li>
+                            <li>1 Sensor PIR</li>
+                            <li>+10 jumpers macho-macho y hembra-macho</li>
+                            <li>Resistencias 220Ω y 1kΩ</li>
+                            <li>1 cable micro USB a USB A</li>
+                            <li>Laptop</li>
+                            <li>Acceso a WiFi</li>
+                            <li>Plataforma Thingspeak</li>
+                            <li>Plataforma Replit</li>
+                            <li>Plataforma Render</li>
                         </ul>
                      
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
 
-                        <h2>Sensor Digital (botón)</h2>
-
                         <p>Simulación en WOKWI:</p>
                         
-                        <embed src="https://wokwi.com/projects/422552504580761601" style="width:1000px; height: 500px;">
+                        <embed src="https://wokwi.com/projects/423971051164252161" style="width:1000px; height: 500px;">
                         
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_1.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light py-2">
+                                <span class="text-primary fw-bold"><i class="bi bi-code-slash me-2"></i>Código del process.php</span>
+                            </div>
+                            <div class="card-body bg-light p-4">
+                                <pre class="bg-dark text-light p-3 rounded" style="overflow-x: auto;"><code style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+?php
+// Habilitar registros de errores para depuración
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+error_reporting(E_ALL);
 
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorDigital.mp4" type="video/mp4">
-                            </video></p></figure>
+// Función de registro para depuración
+function debugLog($message) {
+    $logFile = "debug.log";
+    $timestamp = date("Y-m-d H:i:s");
+    $logMessage = "[$timestamp] $message\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+}
+
+// Registrar la solicitud para depuración
+debugLog("Solicitud recibida: " . json_encode($_GET));
+
+// Crear el archivo si no existe
+if(!file_exists("datos.txt")) {
+    file_put_contents("datos.txt", "0,0,0\r\n"); // Inicializa con 0,0 (botón, PIR, Temperatura)
+    debugLog("Archivo datos.txt creado con valores iniciales");
+}
+
+// Leer el archivo actual
+$ARCHIVO = file_get_contents("datos.txt");
+debugLog("Contenido actual de datos.txt: " . trim($ARCHIVO));
+
+// Manejar datos del botón
+if(isset($_GET['DATO'])) {
+    $DATO_var = $_GET['DATO'];
+    debugLog("Valor de DATO recibido: " . $DATO_var);
+
+    $datos_actuales = explode(",", $ARCHIVO); // Dividir datos actuales (botón, PIR)
+    $nuevo_texto = $DATO_var . "," . trim($datos_actuales[1]) . "," . trim($datos_actuales[2]) . "\r\n"; // Mantener PIR
+    file_put_contents("datos.txt", $nuevo_texto);
+
+    debugLog("Archivo actualizado con valor de DATO: " . $nuevo_texto);
+
+    // Si solo es una solicitud de API, devuelve respuesta y finaliza
+    if(!isset($_GET['view'])) {
+        echo "DATO actualizado: " . $DATO_var;
+        debugLog("Respuesta enviada para DATO");
+        exit;
+    }
+}
+
+// Manejar datos del PIR
+if(isset($_GET['MOVIMIENTO'])) {
+    $MOVIMIENTO_var = $_GET['MOVIMIENTO'];
+    debugLog("Valor de MOVIMIENTO recibido: " . $MOVIMIENTO_var);
+
+    $datos_actuales = explode(",", $ARCHIVO); // Dividir datos actuales (botón, PIR)
+    $nuevo_texto = trim($datos_actuales[0]) . "," . $MOVIMIENTO_var . "," . trim($datos_actuales[2]) . "\r\n"; // Mantener botón
+    file_put_contents("datos.txt", $nuevo_texto);
+
+    debugLog("Archivo actualizado con valor de MOVIMIENTO: " . $nuevo_texto);
+
+    // Si solo es una solicitud de API, devuelve respuesta y finaliza
+    if(!isset($_GET['view'])) {
+        echo "MOVIMIENTO actualizado: " . $MOVIMIENTO_var;
+        debugLog("Respuesta enviada para MOVIMIENTO");
+        exit;
+    }
+}
+
+// Manejar datos de la temperatura
+if(isset($_GET['TEMPERATURA'])) {
+    $TEMPERATURA_var = $_GET['TEMPERATURA'];
+    debugLog("Valor de TEMPERATURA recibido: " . $TEMPERATURA_var);
+
+    $datos_actuales = explode(",", $ARCHIVO); // Dividir datos actuales (botón, PIR)
+    $nuevo_texto = trim($datos_actuales[0]) . "," . trim($datos_actuales[1]) . "," . $TEMPERATURA_var . "\r\n";       // Mantener botón y PIR
+    file_put_contents("datos.txt", $nuevo_texto);
+
+    debugLog("Archivo actualizado con valor de TEMPERATURA: " . $nuevo_texto);
+
+    // Si solo es una solicitud de API, devuelve respuesta y finaliza
+    if(!isset($_GET['view'])) {
+        echo "TEMPERATURA actualizada: " . $TEMPERATURA_var;
+        debugLog("Respuesta enviada para TEMPERATURA");
+        exit;
+    }
+}
+
+// Leer valores actualizados
+$ARCHIVO = file_get_contents("datos.txt");
+$datos = explode(",", $ARCHIVO);
+$DATO_lectura = trim($datos[0]); // Estado del botón
+$MOVIMIENTO_lectura = trim($datos[1]); // Estado del PIR
+$TEMPERATURA_lectura = trim($datos[2]); // Estado del PIR
+
+// Si es una solicitud JSON (para la interfaz web)
+if(isset($_GET['json'])) {
+    header('Content-Type: application/json');
+    $response = array(
+        'buttonState' => $DATO_lectura,
+        'movementState' => $MOVIMIENTO_lectura,
+        'temperatureState' => $TEMPERATURA_lectura
+    );;
+    echo json_encode($response);
+    debugLog("Enviando respuesta JSON: " . json_encode($response));
+    exit;
+}
+
+// Si llegamos aquí, devolver una respuesta simple
+echo "OK - Valores actuales: Botón=" . $DATO_lectura . ", PIR=" . $MOVIMIENTO_lectura . ", Temperatura=" . $TEMPERATURA_lectura;
+debugLog("Enviando respuesta simple OK");
+?></code></pre>
+                            </div>
+                        </div>
 
 
-                        <h2>Sesnor Analógico (potenciometro)</h2>
-                        
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552797323325441" style="width:1000px; height: 500px;">
-                        
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_2.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorAnalógico.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header bg-light py-2">
+                                <span class="text-primary fw-bold"><i class="bi bi-code-slash me-2"></i>Código del script.js</span>
+                            </div>
+                            <div class="card-body bg-light p-4">
+                                <pre class="bg-dark text-light p-3 rounded" style="overflow-x: auto;"><code style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+document.addEventListener('DOMContentLoaded', function() {
+    // Variable para rastrear si Chart.js está disponible
+    const isChartJsAvailable = typeof Chart !== 'undefined';
+    if (!isChartJsAvailable) {
+        console.warn('Chart.js no está disponible. Los gráficos no se mostrarán.');
+    }
 
-                        <h2>Sensor Inteligente (DHT22)</h2>
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552865883443201" style="width:1000px; height: 500px;">
-                        
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_3.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorInteligente.mp4" type="video/mp4">
-                            </video></p></figure>
+    // Función para mostrar errores en la página
+    function mostrarError(mensaje) {
+        console.error(mensaje);
+        // Crear un elemento para mostrar el error si no existe
+        if (!document.getElementById('error-container')) {
+            const errorDiv = document.createElement('div');
+            errorDiv.id = 'error-container';
+            errorDiv.style.backgroundColor = '#ffebee';
+            errorDiv.style.color = '#c62828';
+            errorDiv.style.padding = '10px';
+            errorDiv.style.margin = '10px 0';
+            errorDiv.style.borderRadius = '4px';
+            document.querySelector('main').prepend(errorDiv);
+        }
+        document.getElementById('error-container').textContent = mensaje;
+    }
 
-                        <h2>Sensor Digital PIR</h2>
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552936468354049" style="width:1000px; height: 500px;">
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_4.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_PIR.mp4" type="video/mp4">
-                            </video></p></figure>
-                        
+    // Fetch data from the PHP script
+    fetch('process.php?json=1')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Respuesta del servidor no válida: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Datos recibidos del servidor:', data);
 
+            // Actualización segura de elementos
+            function actualizarElementoSeguro(id, valor) {
+                const elemento = document.getElementById(id);
+                if (elemento) {
+                    elemento.textContent = valor;
+                } else {
+                    console.warn(`Elemento con ID '${id}' no encontrado en el DOM`);
+                }
+            }
+
+            // Update the date container
+            if (data.date) {
+                actualizarElementoSeguro('date-container', data.date);
+            }
+
+            // Update the greeting container
+            if (data.greeting) {
+                actualizarElementoSeguro('greeting-container', data.greeting);
+            }
+
+            // Update the dynamic list
+            if (data.listItems && Array.isArray(data.listItems)) {
+                const dynamicList = document.getElementById('dynamic-list');
+                if (dynamicList) {
+                    dynamicList.innerHTML = ''; // Clear existing items
+                    data.listItems.forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = item;
+                        dynamicList.appendChild(li);
+                    });
+                }
+            }
+
+            // Update the sidebar content
+            if (data.sidebarContent) {
+                const sidebarContent = document.getElementById('sidebar-content');
+                if (sidebarContent) {
+                    sidebarContent.innerHTML = data.sidebarContent;
+                }
+            }
+
+            // Update the current year in the footer
+            if (data.currentYear) {
+                actualizarElementoSeguro('current-year', data.currentYear);
+            }
+
+            // Update sensor values
+            if (data.buttonState !== undefined) {
+                const buttonState = document.getElementById('button-state');
+                if (buttonState) {
+                    buttonState.textContent = data.buttonState === '1' ? 'Activado' : 'Desactivado';
+                }
+            }
+
+            if (data.movementState !== undefined) {
+                const movementState = document.getElementById('movement-state');
+                if (movementState) {
+                    movementState.textContent = data.movementState === '1' ? 'Detectado' : 'No detectado';
+                }
+            }
+
+            if (data.temperatureState !== undefined) {
+                const temperatureValue = document.getElementById('temperature-value');
+                if (temperatureValue) {
+                    temperatureValue.textContent = data.temperatureState + ' °C';
+                }
+            }
+
+            if (data.arduinoButton !== undefined) {
+                const arduinoButtonState = document.getElementById('arduino-button-state');
+                if (arduinoButtonState) {
+                    arduinoButtonState.textContent = data.arduinoButton === '1' ? 'Presionado' : 'No presionado';
+                }
+            }
+
+            // Procesar datos de ThingSpeak
+            if (data.thingspeakData && isChartJsAvailable) {
+                try {
+                    renderThingspeakChart(data.thingspeakData);
+                } catch (error) {
+                    console.error('Error al renderizar el gráfico:', error);
+                    const chartContainer = document.getElementById('potentiometer-chart');
+                    if (chartContainer) {
+                        chartContainer.textContent = 'Error al cargar el gráfico: ' + error.message;
+                    }
+                }
+            } else if (data.thingspeakData && !isChartJsAvailable) {
+                const chartContainer = document.getElementById('potentiometer-chart');
+                if (chartContainer) {
+                    chartContainer.textContent = 'Chart.js no está disponible para mostrar el gráfico';
+                }
+            }
+        })
+        .catch(error => {
+            mostrarError('Error al cargar los datos: ' + error.message);
+        });
+
+    // Función para actualizar periódicamente los datos
+    function actualizarDatos() {
+        fetch('process.php?json=1')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la actualización: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Actualización de datos recibida');
+
+                // Actualizar solo los datos de sensores
+                if (data.buttonState !== undefined) {
+                    const buttonState = document.getElementById('button-state');
+                    if (buttonState) {
+                        buttonState.textContent = data.buttonState === '1' ? 'Activado' : 'Desactivado';
+                    }
+                }
+
+                if (data.movementState !== undefined) {
+                    const movementState = document.getElementById('movement-state');
+                    if (movementState) {
+                        movementState.textContent = data.movementState === '1' ? 'Detectado' : 'No detectado';
+                    }
+                }
+
+                if (data.temperatureState) {
+                    const temperatureValue = document.getElementById('temperature-value');
+                    if (temperatureValue) {
+                        temperatureValue.textContent = data.temperatureState + ' °C';
+                    }
+                } else {
+                    const temperatureValue = document.getElementById('temperature-value');
+                    if (temperatureValue) {
+                        temperatureValue.textContent = 'No detectado';
+                    }
+                }
+
+                if (data.arduinoButton !== undefined) {
+                    const arduinoButtonState = document.getElementById('arduino-button-state');
+                    if (arduinoButtonState) {
+                        arduinoButtonState.textContent = data.arduinoButton === '1' ? 'Presionado' : 'No presionado';
+                    }
+                }
+
+                // Actualizar gráfico de ThingSpeak si hay datos nuevos
+                if (data.thingspeakData && isChartJsAvailable) {
+                    try {
+                        renderThingspeakChart(data.thingspeakData);
+                    } catch (error) {
+                        console.error('Error al actualizar el gráfico:', error);
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error al actualizar datos:', error);
+            });
+    }
+
+    // Actualizar datos cada 5 segundos
+    const updateInterval = setInterval(actualizarDatos, 5000);
+
+    // Limpiar intervalo si la página se descarga
+    window.addEventListener('beforeunload', function() {
+        clearInterval(updateInterval);
+    });
+});
+
+// Función para renderizar el gráfico de ThingSpeak con Chart.js
+function renderThingspeakChart(thingspeakData) {
+    // Verificar que Chart.js esté disponible
+    if (typeof Chart === 'undefined') {
+        console.error('Chart.js no está disponible');
+        return;
+    }
+
+    // Verificar que el contenedor exista
+    const container = document.getElementById('potentiometer-chart');
+    if (!container) {
+        console.error('Contenedor del gráfico no encontrado');
+        return;
+    }
+
+    // Verificar que los datos tengan la estructura correcta
+    if (!thingspeakData.values || !Array.isArray(thingspeakData.values) || thingspeakData.values.length === 0) {
+        container.textContent = 'No hay datos disponibles para mostrar en el gráfico';
+        return;
+    }
+
+    container.innerHTML = ''; // Limpiar contenedor
+
+    // Crear un canvas para el gráfico
+    const canvas = document.createElement('canvas');
+    container.appendChild(canvas);
+
+    try {
+        // Preparar los datos para Chart.js con verificación de seguridad
+        const labels = thingspeakData.values.map(item => {
+            if (item && item.timestamp) {
+                const date = new Date(item.timestamp);
+                return date.toLocaleTimeString();
+            }
+            return 'Sin fecha';
+        });
+
+        const values = thingspeakData.values.map(item => {
+            return item && item.value !== undefined ? item.value : null;
+        });
+
+        // Crear el gráfico con manejo de errores
+        new Chart(canvas, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: (thingspeakData.field1_name || 'Potenciómetro'),
+                    data: values,
+                    borderColor: '#e32400',
+                    backgroundColor: 'rgba(227, 36, 0, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `Datos de ${thingspeakData.channel || 'ThingSpeak'}`
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error('Error al crear el gráfico:', error);
+        container.textContent = 'Error al crear el gráfico: ' + error.message;
+    }
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
+
+                        <embed src="https://dashboardberny.onrender.com/index.html" style="width:1000px; height: 900px;">
 
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">Al finalizar esta práctica, se logra comprender la importancia y versatilidad de los diferentes tipos de sensores en aplicaciones con ESP32 y ESP8266. La experiencia práctica obtenida mediante las simulaciones en WOKWI y las implementaciones físicas proporciona una base sólida para el desarrollo de futuros proyectos IoT.</p>
-                        <p class="fs-6 mb-4">El trabajo con sensores digitales, analógicos e inteligentes demuestra cómo cada tipo tiene sus propias características y aplicaciones específicas, desde la simple detección de estados con botones hasta la medición precisa de variables ambientales con el DHT22 o la detección de movimiento con el PIR. </p>
-                        <p class="fs-6 mb-4">Esta combinación de hardware y programación ilustra claramente cómo los sistemas embebidos pueden interactuar con el mundo físico, sentando las bases para el desarrollo de aplicaciones más complejas en el campo de las redes digitales de datos. </p>
+                        <p class="fs-6 mb-4">En conclusión, esta práctica permitió integrar conocimientos de hardware y software para desarrollar un sistema funcional de adquisición y visualización de datos en tiempo real. La implementación de sensores digitales, analógicos e inteligentes, junto con el uso de plataformas como Replit y Render, facilitó la creación de un dashboard interactivo y accesible. Este proyecto no solo reforzó habilidades técnicas en programación y electrónica, sino que también destacó la importancia de la colaboración en equipo y el uso de herramientas modernas para el desarrollo web. La experiencia adquirida será invaluable para futuros proyectos en el ámbito de IoT y sistemas embebidos.</p>
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
-                        <p class="fs-6 mb-4">Santos, S. (2024, August 2). ESP32 with PIR Motion Sensor using Interrupts and Timers | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/</p>
-                        <p class="fs-6 mb-4">wokwi-pir-motion-sensor Reference | Wokwi Docs. (n.d.). https://docs.wokwi.com/parts/wokwi-pir-motion-sensor</p>
-                        <p class="fs-6 mb-4">Santos, R. (2024, August 5). Getting Started with the ESP32 Development Board | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/getting-started-with-esp32/</p>
+                        <p class="fs-6 mb-4">Beunza, J. (2020, 25 junio). ESP32 conexión via WiFi.</p>
+                        <p class="fs-6 mb-4">Santos, R., & Santos, R. (2022, 27 octubre). ESP32 HTTP GET and HTTP POST with Arduino IDE | Random Nerd Tutorials.</p>
                         
                         <p id="descargables">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
