@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Práctica 2 | Ibero Puebla</title>
+        <title>Práctica 7 | Ibero Puebla</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -51,7 +51,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Practica 2: “Wifi ESP32 Sensores Digitales, Analógicos e Inteligentes” </h1>
+                        <h1 class="fw-bolder mb-1">Practica 7: “Redes de computadora con Switches y Cables”</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <img class="img rounded-circle" width="50px" height="50px" src="../assets/david.jpeg" alt="..." />
@@ -63,10 +63,10 @@
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 10 de febrero, 2025</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 28 de abril, 2025</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
-                        <a class="badge bg-primary text-decoration-none link-light" >ESP32</a>
-                        <a class="badge bg-primary text-decoration-none link-light" >IoT</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Router</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Switch</a>
 
                     </header>
                 </div>
@@ -76,100 +76,54 @@
             <section>
                 <div class="container px-5">
 
-                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/screenshot.png" alt="..." /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/practica7.png" alt="..." /></figure>
                                 
                     <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">En esta práctica se trabaja con diferentes tipos de sensores usando módulos ESP8266 o ESP32, se realizan simulaciones en WOKWI, se crean diagramas de conexión, se programa en Arduino y se efectúan pruebas físicas con componentes como LEDs, resistencias, botones y varios sensores (potenciómetro, DHT22 y PIR).</p>
+                        <p class="fs-6 mb-4">Esta práctica tiene como objetivo entender, reconocer y validar el funcionamiento de una red de área local haciendo uso de switches y routers. Se deben crear dos configuraciones de red: una utilizando un switch y la otra un router, conectando al menos tres equipos y un servidor, aplicando asignación automática de direcciones IP y seleccionando el tipo de cable adecuado para cada caso. Después, se ejecutan pruebas de conectividad mediante comandos como PING y se comprueba el acceso a la página web alojada en el servidor. Al final, ambas redes deben integrarse y se debe verificar que los dispositivos pueden intercambiar archivos entre sí.</p>
                         
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <embed src="https://docs.wokwi.com/parts/wokwi-pir-motion-sensor" style="width:1000px; height: 300px;">
 
-                        <p class="fs-6 mb-4">En el mundo de la electrónica y las redes digitales, los sensores juegan un papel fundamental para la recolección de datos y la interacción con el entorno. Los módulos ESP32 y ESP8266, gracias a su capacidad de conectividad WiFi y su versatilidad, se han convertido en herramientas esenciales para el desarrollo de proyectos de Internet de las Cosas (IoT).</p>
-                        <p class="fs-6 mb-4">Estos módulos permiten la integración de diversos tipos de sensores, desde los más básicos como botones digitales, hasta sensores más complejos como los DHT22 para medición de temperatura y humedad, o los sensores PIR para detección de movimiento. A través de la programación en el entorno Arduino IDE y el uso de plataformas de simulación como WOKWI, es posible desarrollar aplicaciones prácticas que demuestren el funcionamiento y la utilidad de estos dispositivos en situaciones reales.</p>
+                        <p class="fs-6 mb-4">Una red de área local (LAN, por sus siglas en inglés) es un conjunto de dispositivos interconectados dentro de un espacio físico limitado, como una oficina, un laboratorio, un edificio o una vivienda. Estas redes hacen posible el intercambio de información, el uso compartido de aplicaciones y recursos como impresoras, servidores o acceso a Internet de forma ágil, segura y eficiente. Debido a su alta velocidad de transferencia y bajo costo de instalación y mantenimiento, las redes LAN se han vuelto esenciales en contextos empresariales, educativos y domésticos.</p>
+                        <p class="fs-6 mb-4">El diseño y buen desempeño de una LAN depende del uso de dispositivos clave, principalmente switches y routers. Un switch es un dispositivo que funciona sobre la capa 2 del modelo OSI (enlace de datos) y se encarga de conectar equipos dentro de una misma red local. Utiliza direcciones MAC (Control de Acceso al Medio) para enviar datos de manera precisa al destinatario correcto, reduciendo colisiones y aumentando el rendimiento de la red. Gracias al uso de switches, es posible establecer comunicaciones simultáneas entre varios equipos, optimizando el flujo de datos.</p>
+                        <p class="fs-6 mb-4">Por otro lado, un router opera en la capa 3 del modelo OSI (capa de red) y su función principal es enlazar distintas redes entre sí, como una LAN con una red de área extensa (WAN), por ejemplo, Internet. Además de dirigir el tráfico entre redes, los routers suelen integrar funcionalidades como servidores DHCP (Protocolo de Configuración Dinámica de Host), cortafuegos y puntos de acceso Wi-Fi. El DHCP permite asignar IPs de manera automática a cada dispositivo, lo que facilita la gestión de la red, previene conflictos de direcciones y permite una expansión más sencilla.</p>
+                        <p class="fs-6 mb-4">Verificar correctamente la conectividad en una red LAN es crucial para asegurar su operatividad. Para ello, se emplean utilidades como el comando PING, que envía solicitudes ICMP al dispositivo destino y mide el tiempo de respuesta, ayudando a confirmar si existe comunicación, detectar posibles retrasos o pérdidas de paquetes y evaluar la estabilidad de la red.</p>
                         
                         <p id="materiales">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
                         <ul>
-                            <li>Node MCU ESP8266 o ESP32</li>
-                            <li>LED, resistencia de 220 Ohms</li>
-                            <li>Botón y resistencia de 1Khom</li>
-                            <li>Sensores: Potenciómetro, DHT22, PIR</li>
-                            <li>Protoboard y cables</li>
+                            <li>4 Laptops</li>
+                            <li>5 Cables directos</li>
+                            <li>1 Switch</li>
+                            <li>1 Router</li>
                         </ul>
                      
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
-
-                        <h2>Sensor Digital (botón)</h2>
-
-                        <p>Simulación en WOKWI:</p>
                         
-                        <embed src="https://wokwi.com/projects/422552504580761601" style="width:1000px; height: 500px;">
-                        
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_1.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <p class="fs-6 mb-4">Para llevar a cabo la instalación de la red, lo primero fue seleccionar los componentes necesarios: un switch, cuatro computadoras (tres actuando como estaciones de trabajo y una como servidor) y el cableado adecuado. Se optó por utilizar cable de par trenzado categoría 5e (Cat 5e), el cual es apto para transmisiones de hasta 1 Gbps en redes de área local.</p>
+                        <p class="fs-6 mb-4">Dado que los dispositivos conectados (computadoras y switch) son distintos entre sí, se emplearon cables directos (también conocidos como cables rectos), utilizando la norma T568A en ambos extremos. Posteriormente, cada equipo fue conectado a un puerto libre del switch mediante estos cables, asegurándose de que todos estuvieran encendidos y funcionando correctamente. El servidor fue conectado de la misma forma.</p>
+                        <p class="fs-6 mb-4">Para configurar la red, se activó la asignación automática de direcciones IP utilizando el protocolo DHCP. En este caso, se usó el servidor como emisor de las direcciones IP o, alternativamente, se conectó temporalmente un router con DHCP habilitado para realizar esa tarea.</p>
+                        <p class="fs-6 mb-4">Una vez completadas las conexiones físicas y la configuración inicial, se comprobó que cada equipo obtuviera una dirección IP válida dentro del mismo segmento de red. Para confirmar la comunicación entre los dispositivos, se empleó el comando PING desde cada computadora hacia las demás, verificando que los paquetes llegaran correctamente y no hubiera pérdida de datos, lo que indicó que todos los equipos estaban conectados y comunicándose adecuadamente.</p>
 
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorDigital.mp4" type="video/mp4">
-                            </video></p></figure>
-
-
-                        <h2>Sesnor Analógico (potenciometro)</h2>
-                        
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552797323325441" style="width:1000px; height: 500px;">
-                        
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_2.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorAnalógico.mp4" type="video/mp4">
-                            </video></p></figure>
-
-                        <h2>Sensor Inteligente (DHT22)</h2>
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552865883443201" style="width:1000px; height: 500px;">
-                        
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_3.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorInteligente.mp4" type="video/mp4">
-                            </video></p></figure>
-
-                        <h2>Sensor Digital PIR</h2>
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552936468354049" style="width:1000px; height: 500px;">
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_4.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_PIR.mp4" type="video/mp4">
-                            </video></p></figure>
-                        
+                        <img src="img/ArmadoRouter.jpg" width="400px" height="400px" alt="Router" />
+                        <p id="resultados">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
+                        <p class="fs-6 mb-4">Para probar la conexión entre dispositivos, realizamos una interfaz con HTML y CSS para mandar desde la computadora servidor hacia las otras computadoras para comprobar la funcionalidad.</p>
+                        <img src="img/interfaz.png" width="1100px" height="600px" alt="Interfaz" />
+                        <p class="fs-6 mb-4"> Las 3 computadoras viendo la interfaz que mandó la computadora servidor</p>
+                        <img src="img/parte1.jpg" width="600px" height="400px" alt="Computadoras1" />
+                        <img src="img/parte2.jpg" width="600px" height="400px" alt="Computadoras2" />
 
 
                         <p id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">Al finalizar esta práctica, se logra comprender la importancia y versatilidad de los diferentes tipos de sensores en aplicaciones con ESP32 y ESP8266. La experiencia práctica obtenida mediante las simulaciones en WOKWI y las implementaciones físicas proporciona una base sólida para el desarrollo de futuros proyectos IoT.</p>
-                        <p class="fs-6 mb-4">El trabajo con sensores digitales, analógicos e inteligentes demuestra cómo cada tipo tiene sus propias características y aplicaciones específicas, desde la simple detección de estados con botones hasta la medición precisa de variables ambientales con el DHT22 o la detección de movimiento con el PIR. </p>
-                        <p class="fs-6 mb-4">Esta combinación de hardware y programación ilustra claramente cómo los sistemas embebidos pueden interactuar con el mundo físico, sentando las bases para el desarrollo de aplicaciones más complejas en el campo de las redes digitales de datos. </p>
+                        <p class="fs-6 mb-4">En esta práctica, se logró comprender y aplicar los conceptos fundamentales de redes de área local mediante la implementación de configuraciones con switches y routers. La experiencia permitió reforzar habilidades en la selección de materiales, el diseño de topologías de red y la configuración de dispositivos. Además, se verificó la conectividad y funcionalidad de la red mediante pruebas prácticas, como el uso del comando PING y la visualización de una interfaz web alojada en el servidor. Este ejercicio destacó la importancia de una planificación adecuada y el uso de herramientas de diagnóstico para garantizar el correcto funcionamiento de una red, sentando las bases para proyectos más complejos en el ámbito de las telecomunicaciones y redes de datos.</p>
                         <p id="referencias">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
-                        <p class="fs-6 mb-4">Santos, S. (2024, August 2). ESP32 with PIR Motion Sensor using Interrupts and Timers | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/</p>
-                        <p class="fs-6 mb-4">wokwi-pir-motion-sensor Reference | Wokwi Docs. (n.d.). https://docs.wokwi.com/parts/wokwi-pir-motion-sensor</p>
-                        <p class="fs-6 mb-4">Santos, R. (2024, August 5). Getting Started with the ESP32 Development Board | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/getting-started-with-esp32/</p>
-                        
-                        <p id="descargables">
-                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
-                        <p class="fs-6 mb-4">Descargar instrucciones: <a href="files/practica2.docx">practica2.docx</a> </p>
+                        <p class="fs-6 mb-4">Small business IT explained in 60 seconds or less: Switches vs. Routers. (2023, 3 mayo). [Vídeo]. Cisco.</p>
+                        <p class="fs-6 mb-4">CoveriX. (2024, 19 junio). Ventajas y desventajas de los servidores locales. Coverix.</p>
 
                 </div>
             </section>
