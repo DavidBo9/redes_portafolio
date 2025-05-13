@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
+        <meta name="description" content="Práctica 5: Cables de Red - Redes Digitales de Datos" />
         <meta name="author" content="" />
-        <title>Práctica 2 | Ibero Puebla</title>
+        <title>Práctica 5: Cables de Red | Ibero Puebla</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -51,7 +51,7 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Practica 2: “Wifi ESP32 Sensores Digitales, Analógicos e Inteligentes” </h1>
+                        <h1 class="fw-bolder mb-1">Práctica 5: Cables de Red</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <img class="img rounded-circle" width="50px" height="50px" src="../assets/david.jpeg" alt="..." />
@@ -59,14 +59,16 @@
                             <div class="ms-2">
                                 <div class="fw-bold">David Bojalil Abiti</div>
                                 <div class="fw-bold">Alfredo Barranco Ahued</div>
-                                <div class="text-muted">Ingenieria en Sistemas Computacionales</div>
+                                <div class="text-muted">Ingeniería en Sistemas Computacionales</div>
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 10 de febrero, 2025</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: 12 de mayo, 2025</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
-                        <a class="badge bg-primary text-decoration-none link-light" >ESP32</a>
-                        <a class="badge bg-primary text-decoration-none link-light" >IoT</a>
+                        <a class="badge bg-primary text-decoration-none link-light">Cables de Red</a>
+                        <a class="badge bg-primary text-decoration-none link-light">Cable Directo</a>
+                        <a class="badge bg-primary text-decoration-none link-light">Cable Cruzado</a>
+                        <a class="badge bg-primary text-decoration-none link-light">Ponchado</a>
 
                     </header>
                 </div>
@@ -76,112 +78,170 @@
             <section>
                 <div class="container px-5">
 
-                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/screenshot.png" alt="..." /></figure>
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/cable_red_header.png" alt="Imagen de cables de red" /></figure>
                                 
-                    <p id="resumen">
-                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">En esta práctica se trabaja con diferentes tipos de sensores usando módulos ESP8266 o ESP32, se realizan simulaciones en WOKWI, se crean diagramas de conexión, se programa en Arduino y se efectúan pruebas físicas con componentes como LEDs, resistencias, botones y varios sensores (potenciómetro, DHT22 y PIR).</p>
+                    <div id="resumen">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resumen -</h2>
+                        <p class="fs-6 mb-4">En esta práctica nos enfocamos en el estudio, identificación y comprobación del funcionamiento de los cables de red estructurado. Se investigan las configuraciones de cables directos y cruzados, se aprende a realizar pruebas de funcionamiento, y se arman y prueban 3 cables de cada tipo para adquirir experiencia práctica en el cableado de redes.</p>
+                    </div>
                         
-                        <p id="intro">
-                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <embed src="https://docs.wokwi.com/parts/wokwi-pir-motion-sensor" style="width:1000px; height: 300px;">
-
-                        <p class="fs-6 mb-4">En el mundo de la electrónica y las redes digitales, los sensores juegan un papel fundamental para la recolección de datos y la interacción con el entorno. Los módulos ESP32 y ESP8266, gracias a su capacidad de conectividad WiFi y su versatilidad, se han convertido en herramientas esenciales para el desarrollo de proyectos de Internet de las Cosas (IoT).</p>
-                        <p class="fs-6 mb-4">Estos módulos permiten la integración de diversos tipos de sensores, desde los más básicos como botones digitales, hasta sensores más complejos como los DHT22 para medición de temperatura y humedad, o los sensores PIR para detección de movimiento. A través de la programación en el entorno Arduino IDE y el uso de plataformas de simulación como WOKWI, es posible desarrollar aplicaciones prácticas que demuestren el funcionamiento y la utilidad de estos dispositivos en situaciones reales.</p>
+                    <div id="intro">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Introducción -</h2>
+                        <p class="fs-6 mb-4">En el ámbito de las redes digitales de datos, los cables de red estructurado representan la infraestructura física fundamental que permite la comunicación entre dispositivos. Existen principalmente dos tipos de configuraciones: cables directos (straight-through) y cables cruzados (crossover), cada uno con propósitos específicos dentro de una red.</p>
+                        <p class="fs-6 mb-4">Los cables directos se utilizan comúnmente para conectar dispositivos de diferentes categorías (como un ordenador a un switch), mientras que los cables cruzados se emplean para conectar dispositivos de la misma categoría (como un ordenador a otro ordenador). Comprender las diferencias entre estos tipos de cables, sus configuraciones de pines y métodos de comprobación constituye un conocimiento esencial para cualquier profesional en el campo de las redes.</p>
+                        <p class="fs-6 mb-4">Esta práctica nos permitirá desarrollar habilidades técnicas en la creación y prueba de cables de red, capacidades fundamentales para el diagnóstico y resolución de problemas de conectividad en entornos de red reales.</p>
+                    </div>
                         
-                        <p id="materiales">
-                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
+                    <div id="materiales">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Materiales -</h2>
                         <ul>
-                            <li>Node MCU ESP8266 o ESP32</li>
-                            <li>LED, resistencia de 220 Ohms</li>
-                            <li>Botón y resistencia de 1Khom</li>
-                            <li>Sensores: Potenciómetro, DHT22, PIR</li>
-                            <li>Protoboard y cables</li>
+                            <li>Cable UTP categoría 5e o 6</li>
+                            <li>Conectores RJ-45 (mínimo 6 unidades)</li>
+                            <li>Pinza ponchadora/crimpadora para cables de red</li>
+                            <li>Tester o probador de cables de red</li>
+                            <li>Pelacables (opcional)</li>
+                            <li>Tijeras</li>
+                            <li>Tabla de configuración T568A y T568B para referencia</li>
                         </ul>
+                    </div>
                      
-                        <p id="desarrollo">
+                    <div id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
 
-                        <h2>Sensor Digital (botón)</h2>
+                        <h3 class="fw-bolder mb-3 fs-6">1. Investigación sobre cables de red estructurado</h3>
 
-                        <p>Simulación en WOKWI:</p>
+                        <h4 class="fw-bold mb-2">Cable Directo:</h4>
+                        <ul>
+                            <li>Utilizado para conectar dispositivos de diferentes categorías (PC a switch, switch a router)</li>
+                            <li>Ambos extremos siguen la misma norma de conexión (T568A o T568B)</li>
+                            <li>El mapeo de pines es idéntico en ambos extremos</li>
+                            <li>Distribución de pines según norma T568B:
+                                <ol>
+                                    <li>Blanco/Naranja</li>
+                                    <li>Naranja</li>
+                                    <li>Blanco/Verde</li>
+                                    <li>Azul</li>
+                                    <li>Blanco/Azul</li>
+                                    <li>Verde</li>
+                                    <li>Blanco/Marrón</li>
+                                    <li>Marrón</li>
+                                </ol>
+                            </li>
+                        </ul>
+
+                        <figure class="mb-4"><img class="img-fluid rounded" width="600px" src="img/cable_directo.png" alt="Diagrama de cable directo" /></figure>
+
+                        <h4 class="fw-bold mb-2">Cable Cruzado:</h4>
+                        <ul>
+                            <li>Utilizado para conectar dispositivos de la misma categoría (PC a PC, switch a switch)</li>
+                            <li>Un extremo sigue la norma T568A y el otro extremo la norma T568B</li>
+                            <li>Cruza los pares de transmisión y recepción</li>
+                            <li>Configuración:
+                                <ul>
+                                    <li>Extremo 1 (T568A): 1-2: Blanco/Verde, Verde; 3-6: Blanco/Naranja, Naranja</li>
+                                    <li>Extremo 2 (T568B): 1-2: Blanco/Naranja, Naranja; 3-6: Blanco/Verde, Verde</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <figure class="mb-4"><img class="img-fluid rounded" width="600px" src="img/cable_cruzado.png" alt="Diagrama de cable cruzado" /></figure>
+
+                        <h3 class="fw-bolder mb-3 fs-6">2. Procedimiento para probar cables de red</h3>
+
+                        <ol>
+                            <li>Verificación visual: Comprobar que no haya cables expuestos o mal crimpados</li>
+                            <li>Uso del tester:
+                                <ul>
+                                    <li>Conectar un extremo del cable al puerto "MAIN" del tester</li>
+                                    <li>Conectar el otro extremo al puerto "REMOTE"</li>
+                                    <li>Encender el dispositivo y verificar la secuencia de luces:
+                                        <ul>
+                                            <li>Cable directo: Las luces deben encenderse en secuencia idéntica (1-1, 2-2, etc.)</li>
+                                            <li>Cable cruzado: Las luces deben mostrar el cruce correcto (1-3, 2-6, 3-1, 6-2)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Verificar continuidad en todos los pines</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <figure class="mb-4"><img class="img-fluid rounded" width="500px" src="img/tester_cable.png" alt="Tester de cable de red" /></figure>
+
+                        <h3 class="fw-bolder mb-3 fs-6">3. Armado de cables</h3>
+
+                        <h4 class="fw-bold mb-2">Proceso para armar un cable de red:</h4>
+                        <ol>
+                            <li>Cortar el cable a la longitud deseada</li>
+                            <li>Pelar aproximadamente 1.5-2 cm de la cubierta exterior</li>
+                            <li>Desenrollar y ordenar los pares según la norma requerida</li>
+                            <li>Alinear los cables y cortarlos a la misma longitud (aproximadamente 1 cm)</li>
+                            <li>Insertar los cables ordenados en el conector RJ-45</li>
+                            <li>Verificar que todos los cables lleguen al fondo del conector</li>
+                            <li>Utilizar la pinza crimpadora para fijar el conector</li>
+                            <li>Repetir en el otro extremo siguiendo la misma norma (cable directo) o la norma alternativa (cable cruzado)</li>
+                        </ol>
+
+                        <figure class="mb-4"><img class="img-fluid rounded" width="600px" src="img/proceso_ponchado.png" alt="Proceso de ponchado de cables" /></figure>
+                    </div>
+
+                    <div id="resultados">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
+                        <p class="fs-6 mb-4">Durante la práctica se armaron exitosamente 3 cables directos y 3 cables cruzados. Cada cable fue sometido a pruebas de continuidad y funcionamiento utilizando el tester de red, verificando:</p>
                         
-                        <embed src="https://wokwi.com/projects/422552504580761601" style="width:1000px; height: 500px;">
-                        
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_1.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <ol>
+                            <li>La correcta correspondencia de pines según el tipo de cable</li>
+                            <li>La ausencia de cortocircuitos entre los pares</li>
+                            <li>La continuidad en cada uno de los hilos conductores</li>
+                            <li>El funcionamiento correcto en una red de prueba</li>
+                        </ol>
 
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorDigital.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <p class="fs-6 mb-4">Las pruebas confirmaron que todos los cables armados funcionan correctamente según su configuración específica y pueden utilizarse en un entorno de red real.</p>
 
+                        <h3 class="fw-bolder mb-3 fs-6">Cables Directos</h3>
+                        <figure class="mb-4"><img class="img-fluid rounded" width="600px" src="img/cables_directos_resultado.png" alt="Cables directos terminados" /></figure>
 
-                        <h2>Sesnor Analógico (potenciometro)</h2>
-                        
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552797323325441" style="width:1000px; height: 500px;">
-                        
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_2.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorAnalógico.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <h3 class="fw-bolder mb-3 fs-6">Cables Cruzados</h3>
+                        <figure class="mb-4"><img class="img-fluid rounded" width="600px" src="img/cables_cruzados_resultado.png" alt="Cables cruzados terminados" /></figure>
 
-                        <h2>Sensor Inteligente (DHT22)</h2>
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552865883443201" style="width:1000px; height: 500px;">
-                        
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_3.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_SensorInteligente.mp4" type="video/mp4">
-                            </video></p></figure>
+                        <h3 class="fw-bolder mb-3 fs-6">Pruebas de Funcionamiento</h3>
+                        <figure class="mb-4"><img class="img-fluid rounded" width="600px" src="img/prueba_funcionamiento.png" alt="Prueba de funcionamiento de los cables" /></figure>
 
-                        <h2>Sensor Digital PIR</h2>
-                        <p>Simulación en WOKWI</p>
-                        <embed src="https://wokwi.com/projects/422552936468354049" style="width:1000px; height: 500px;">
-                            <h3 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h3>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/practica2_4.mp4" type="video/mp4">
-                            </video></p></figure>
-                            <figure class="mb-4" align="center"><video width="80%"  controls>
-                                <source src="video/P2_PIR.mp4" type="video/mp4">
-                            </video></p></figure>
-                        
+                        <figure class="mb-4" align="center"><video width="80%" controls>
+                            <source src="video/prueba_cable_directo.mp4" type="video/mp4">
+                        </video></figure>
 
+                        <figure class="mb-4" align="center"><video width="80%" controls>
+                            <source src="video/prueba_cable_cruzado.mp4" type="video/mp4">
+                        </video></figure>
+                    </div>
 
-                        <p id="conclusiones">
+                    <div id="conclusiones">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                        <p class="fs-6 mb-4">Al finalizar esta práctica, se logra comprender la importancia y versatilidad de los diferentes tipos de sensores en aplicaciones con ESP32 y ESP8266. La experiencia práctica obtenida mediante las simulaciones en WOKWI y las implementaciones físicas proporciona una base sólida para el desarrollo de futuros proyectos IoT.</p>
-                        <p class="fs-6 mb-4">El trabajo con sensores digitales, analógicos e inteligentes demuestra cómo cada tipo tiene sus propias características y aplicaciones específicas, desde la simple detección de estados con botones hasta la medición precisa de variables ambientales con el DHT22 o la detección de movimiento con el PIR. </p>
-                        <p class="fs-6 mb-4">Esta combinación de hardware y programación ilustra claramente cómo los sistemas embebidos pueden interactuar con el mundo físico, sentando las bases para el desarrollo de aplicaciones más complejas en el campo de las redes digitales de datos. </p>
-                        <p id="referencias">
-                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
-                        <p class="fs-6 mb-4">Santos, S. (2024, August 2). ESP32 with PIR Motion Sensor using Interrupts and Timers | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/esp32-pir-motion-sensor-interrupts-timers/</p>
-                        <p class="fs-6 mb-4">wokwi-pir-motion-sensor Reference | Wokwi Docs. (n.d.). https://docs.wokwi.com/parts/wokwi-pir-motion-sensor</p>
-                        <p class="fs-6 mb-4">Santos, R. (2024, August 5). Getting Started with the ESP32 Development Board | Random Nerd Tutorials. Random Nerd Tutorials. https://randomnerdtutorials.com/getting-started-with-esp32/</p>
+                        <p class="fs-6 mb-4">Esta práctica nos permitió conocer, identificar y comprobar el funcionamiento de los cables de red estructurado. Logramos entender las diferencias entre cables directos y cruzados, tanto en su configuración como en sus aplicaciones dentro de una red.</p>
+                        <p class="fs-6 mb-4">El proceso de armar nuestros propios cables nos proporcionó una valiosa experiencia práctica en el manejo de herramientas y materiales utilizados en el cableado de redes. Las pruebas realizadas con el tester demostraron la importancia de seguir correctamente las normas establecidas para garantizar el funcionamiento óptimo de la conexión.</p>
+                        <p class="fs-6 mb-4">Podemos concluir que, a pesar de la creciente adopción de redes inalámbricas, el conocimiento sobre cables de red estructurado sigue siendo fundamental para cualquier profesional de TI, ya que constituyen la base de infraestructuras de red confiables y de alto rendimiento.</p>
+                    </div>
                         
-                        <p id="descargables">
+                    <div id="referencias">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
+                        <p class="fs-6 mb-4">TIA/EIA-568-B. (2001). Commercial Building Telecommunications Cabling Standard. Telecommunications Industry Association.</p>
+                        <p class="fs-6 mb-4">Molina, J. (2022). Redes Locales (2a ed.). Ra-Ma Editorial.</p>
+                        <p class="fs-6 mb-4">Tanenbaum, A. S., & Wetherall, D. J. (2021). Computer Networks (6th ed.). Pearson.</p>
+                    </div>
+                        
+                    <div id="descargables">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
-                        <p class="fs-6 mb-4">Descargar instrucciones: <a href="files/practica2.docx">practica2.docx</a> </p>
-
+                        <p class="fs-6 mb-4">Descargar instrucciones: <a href="files/practica5_cables_red.pdf">practica5_cables_red.pdf</a></p>
+                    </div>
                 </div>
             </section>
-
-            
         </main>
 
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Ingenierias-iberopuebla.mx 2023</div></div>
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Ingenierias-iberopuebla.mx 2025</div></div>
                     <div class="col-auto">
                         <a class="link-light small" href="#!">Privacy</a>
                         <span class="text-white mx-1">&middot;</span>
